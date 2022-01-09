@@ -3,14 +3,27 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .row {
     display: flex;
-    width: 150px;
-    height: 50px;
+    width: 300px;
+    height: 100px;
   }
   
 .cell {
-    flex-grow: 1;
-    border: 1px solid red;
+    width: 100px;
+    border: 2px solid rgb(115, 187, 255);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 50px;
+}
+
+.button_placeholder {
+    background-color: white;
+    border: none;
+    font-size: 50px;
+    color: rgb(199, 199, 199);
+}
+
+.button_placeholder:hover {
+    cursor: pointer;
+    color: rgb(163, 163, 163);
 }

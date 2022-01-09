@@ -4,10 +4,22 @@
       <span class="cell">
         <% if !game[row, col].nil? %>
           <%= game[row, col] %>
+        <% elsif @winner %>
+            <%= " " %>
         <% else %>
-          <%= button_to game.current_symbol, game_moves_path(game), params: { row: row, col: col }, method: :post %>
+          <%= button_to game.current_symbol, game_moves_path(game), params: { row: row, col: col }, method: :post, class: 'button_placeholder' %>
         <% end %>
       </span>
     <% end %>
   </div>
+<% end %>
+
+<p>Share this url to play with a friend: <span> <%= request.original_url %> </span><p>
+
+<% if @winner %>
+    <h2>The winner is <%= @winner %></h2>
+    <form action="/games" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="submit" value="New game">
+    </form>
 <% end %>
