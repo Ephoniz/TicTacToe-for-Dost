@@ -14,7 +14,7 @@
   </div>
 <% end %>
 
-<p>Share this url to play with a friend: <span> <%= request.original_url %> </span><p>
+<p>Share this url to play with a friend: <span> <%= "http://localhost:3000/games/#{game.id}" %> </span><p>
 
 <% if @winner %>
     <h2>The winner is <%= @winner %></h2>
